@@ -5,7 +5,7 @@ export const Navigation = () => {
     <nav>
       <ul>
         <li>
-          <StyledLink to="/" />
+          <StyledLink />
           Home
           <StyledLink />
         </li>
