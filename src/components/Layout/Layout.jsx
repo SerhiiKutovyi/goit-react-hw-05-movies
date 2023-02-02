@@ -1,15 +1,15 @@
-import { Home } from 'components/Home/Home';
-import { Movies } from 'components/Movies/Movies';
+import { Navigation } from 'components/Navigation/Navigation';
+import { Outlet } from 'react-router-dom';
 
 export const Layout = () => {
   return (
-    <header>
-      <div>
-        <Home />
-      </div>
-      <div>
-        <Movies />
-      </div>
-    </header>
+    <>
+      <header>
+        <Navigation />
+      </header>
+      <main>
+        <Outlet />
+      </main>
+    </>
   );
 };
