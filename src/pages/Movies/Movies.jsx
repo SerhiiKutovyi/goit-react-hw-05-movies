@@ -1,7 +1,7 @@
 export const Movies = () => {
   return (
     <>
-      <p>Helo home</p>
+      <p>Helo movies!</p>
     </>
   );
 };
