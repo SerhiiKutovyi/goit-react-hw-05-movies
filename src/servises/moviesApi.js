@@ -1,15 +1,18 @@
 import axios from 'axios';
 
-const KEY = 'tIj1kC332ExvV8vs1uBAp1fasaO5ERpG';
-axios.defaults.baseURL = 'https://app.ticketmaster.com/discovery/v2/';
+const KEY = '2fdffbc73ca59cbf450fa0d66de3e7b7';
+axios.defaults.baseURL = 'https://api.themoviedb.org/3';
+const TRENDING = '/trending/all/day';
 
-export async function fetchEvents() {
-  const response = await axios('events', {
+export async function fetchTrendingToday() {
+  const response = await axios(TRENDING, {
     params: {
-      apikey: KEY,
-      size: 20,
+      api_key: KEY,
+      media_type: 'all',
+      time_window: 'day',
     },
   });
+  console.log(response.data.results);
 
-  return response.data._embedded.events;
+  return response.data.results;
 }
