@@ -23,12 +23,14 @@ export async function fetchMovieDetailsById(id) {
   return response.data;
 }
 
-export async function fetchMovieName() {
-  const response = await axios('/search/movie', {
+export async function fetchMovieName(moviname) {
+  const response = await axios(`/search/movie`, {
     params: {
       api_key: KEY,
+      page: 1,
+      query: moviname,
     },
   });
 
-  return response.data;
+  return response.data.results;
 }

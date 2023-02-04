@@ -2,7 +2,6 @@ import { useFetchMovieDetails } from 'hooks/FetchMovieDetails';
 
 export const MovieDetails = () => {
   const details = useFetchMovieDetails();
-  console.log(2222, details);
 
   return (
     <>
