@@ -7,6 +7,7 @@ export const useFetchMovieDetails = () => {
   const { moviesId } = useParams();
 
   useEffect(() => {
+    if (!moviesId) return;
     fetchMovieDetailsById(moviesId).then(setDetails);
   }, [moviesId]);
   return details;
