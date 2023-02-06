@@ -1,7 +1,9 @@
+import { CastStyleds } from './Cast.styleds';
+
 export const Cast = () => {
   return (
     <>
-      <p>Cast</p>
+      <CastStyleds>details</CastStyleds>
     </>
   );
 };
