@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { CastStyleds, CastP } from './Cast.styleds';
+import { CastStyleds } from './Cast.styleds';
 import { fetchMovieCredits } from 'services/moviesApi';
+import photo from '../../photo/broken_img.png';
 
 const Cast = () => {
   const [creditsId, setCreditsId] = useState([]);
@@ -19,11 +20,15 @@ const Cast = () => {
           ({ id, original_name, profile_path = 'No photo', character }) => (
             <CastStyleds key={id}>
               <img
-                src={`https://image.tmdb.org/t/p/w200/${profile_path}`}
+                src={
+                  profile_path
+                    ? `https://image.tmdb.org/t/p/w200/${profile_path}`
+                    : photo
+                }
                 alt={original_name}
               />
-              <span>{original_name}</span>
-              <CastP>character: {character}</CastP>
+              <h3>{original_name}</h3>
+              <span>character: {character}</span>
             </CastStyleds>
           )
         )}

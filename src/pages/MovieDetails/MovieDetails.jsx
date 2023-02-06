@@ -1,13 +1,16 @@
 import { useFetchMovieDetails } from 'hooks/useFetchMovieDetails';
 import { Details, Additional } from './MovieDetails.styleds';
-import { NavLink, Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
+import { StyledLinkBtn } from './MovieDetails.styleds';
 
 const MovieDetails = () => {
   const details = useFetchMovieDetails();
 
+  console.log(222, details);
+
   return (
     <>
-      <Link to="/"> Beck</Link>
+      <StyledLinkBtn to="/">Go back</StyledLinkBtn>
 
       {details && (
         <Details>
@@ -21,8 +24,8 @@ const MovieDetails = () => {
             <h2>
               {details.title} ({details.release_date})
             </h2>
-            <p>User score: {details.popularity}</p>
-            <h3>Owerview</h3>
+            <p>User score: {Math.ceil(details.popularity * 10)}%</p>
+            <h3>Overview</h3>
             <p>{details.overview}</p>
             <h3>Genres</h3>
             <p>{details.genres.name}</p>

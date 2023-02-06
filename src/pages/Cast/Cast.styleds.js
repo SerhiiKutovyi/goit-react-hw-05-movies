@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
-export const CastStyleds = styled.p`
+export const CastStyleds = styled.div`
   margin-left: 20px;
 
   img {
     margin-bottom: 10px;
+    width: 200px;
   }
-`;
 
-export const CastP = styled.span`
-  margin-bottom: 30px;
+  span {
+    width: 100%;
+    margin-bottom: 30px;
+    display: inline-block;
+  }
 `;

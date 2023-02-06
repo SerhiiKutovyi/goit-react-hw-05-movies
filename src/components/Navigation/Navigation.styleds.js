@@ -4,11 +4,15 @@ import styled from 'styled-components';
 export const StyledLink = styled(NavLink)`
   text-decoration: none;
   display: block;
+  font-size: 24px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
 
   color: black;
 
   &.active {
-    color: green;
+    color: coral;
   }
 `;
 

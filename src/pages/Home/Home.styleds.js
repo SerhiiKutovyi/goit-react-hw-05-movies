@@ -13,5 +13,6 @@ export const HomeTrend = styled.div`
 
   li {
     color: blue;
+    margin-bottom: 5px;
   }
 `;
