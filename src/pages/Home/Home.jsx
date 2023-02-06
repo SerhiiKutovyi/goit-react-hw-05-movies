@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { fetchTrendingToday } from 'servises/moviesApi';
-import { HomeTrend } from './Home.styleds';
 import { Link } from 'react-router-dom';
+import { HomeTrend } from './Home.styleds';
+import { fetchTrendingToday } from 'servises/moviesApi';
 
 export const Home = () => {
   const [trending, setTrending] = useState([]);

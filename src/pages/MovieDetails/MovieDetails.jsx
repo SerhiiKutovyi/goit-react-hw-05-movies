@@ -1,11 +1,14 @@
 import { useFetchMovieDetails } from 'hooks/FetchMovieDetails';
-import { Details } from './MovieDetails.styleds';
+import { Details, Additional } from './MovieDetails.styleds';
+import { NavLink, Link, Outlet } from 'react-router-dom';
 
 export const MovieDetails = () => {
   const details = useFetchMovieDetails();
 
   return (
     <>
+      <Link to="/"> Beck</Link>
+
       {details && (
         <Details>
           <div>
@@ -26,6 +29,16 @@ export const MovieDetails = () => {
           </div>
         </Details>
       )}
+      <p>Additional information</p>
+      <Additional>
+        <li>
+          <NavLink to="cast">Cast</NavLink>
+        </li>
+        <li>
+          <NavLink to="reviews">Reviews</NavLink>
+        </li>
+      </Additional>
+      <Outlet />
     </>
   );
 };
