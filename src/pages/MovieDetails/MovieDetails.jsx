@@ -1,4 +1,4 @@
-import { useFetchMovieDetails } from 'hooks/FetchMovieDetails';
+import { useFetchMovieDetails } from 'hooks/useFetchMovieDetails';
 import { Details, Additional } from './MovieDetails.styleds';
 import { NavLink, Link, Outlet } from 'react-router-dom';
 

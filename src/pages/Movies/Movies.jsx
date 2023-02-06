@@ -1,7 +1,7 @@
 import { useSearchParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { MoviesStyleds } from './Movies.styleds';
-import { fetchMovieName } from 'servises/moviesApi';
+import { fetchMovieName } from 'services/moviesApi';
 
 export const Movies = () => {
   const [inputValue, setInputValue] = useState([]);

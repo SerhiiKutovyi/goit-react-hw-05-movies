@@ -42,7 +42,7 @@ export async function fetchMovieCredits(id) {
       api_key: KEY,
     },
   });
-  console.log(111, response);
+  console.log(111, response.data.cast);
 
   return response.data;
 }
