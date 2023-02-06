@@ -1,9 +1,10 @@
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams, Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { MoviesStyleds } from './Movies.styleds';
 import { fetchMovieName } from 'services/moviesApi';
 
 const Movies = () => {
+  const location = useLocation();
   const [inputValue, setInputValue] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const moviname = searchParams.get('movie') ?? '';
@@ -35,7 +36,9 @@ const Movies = () => {
         <ul>
           {inputValue.map(({ original_title = 'Not relevant', id }) => (
             <li key={id}>
-              <Link to={`${id}`}>{original_title}</Link>
+              <Link to={`${id}`} state={{ from: location }}>
+                {original_title}
+              </Link>
             </li>
           ))}
         </ul>

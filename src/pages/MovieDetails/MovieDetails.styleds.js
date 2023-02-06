@@ -5,12 +5,10 @@ export const Details = styled.div`
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
-  border-bottom: solid 1px red;
+  border-bottom: solid 1px black;
 
   img {
-    margin-left: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    min-width: 200px;
   }
   h2 {
     margin-bottom: 10px;
@@ -20,7 +18,7 @@ export const Details = styled.div`
     margin-bottom: 10px;
   }
   h3 {
-    margin-bottom: 10 px;
+    margin-bottom: 5px;
   }
 `;
 
@@ -28,9 +26,32 @@ export const Additional = styled.ul`
   margin-left: 30px;
   margin-bottom: 20px;
   margin-top: 10px;
+
+  p {
+    margin-bottom: 10px;
+  }
 `;
 
 export const StyledLinkBtn = styled(NavLink)`
-  background-color: aqua;
-  border: 1px solid tomato;
+  padding: 0px 5px;
+  margin-left: 20px;
+  line-height: 30px;
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  color: #ffffff;
+
+  &:hover {
+    background-color: coral;
+  }
+`;
+
+export const ImgDiv = styled.div`
+  margin-bottom: 10px;
 `;

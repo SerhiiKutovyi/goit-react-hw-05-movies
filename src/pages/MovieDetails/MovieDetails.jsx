@@ -1,30 +1,30 @@
 import { useFetchMovieDetails } from 'hooks/useFetchMovieDetails';
 import { Details, Additional } from './MovieDetails.styleds';
-import { NavLink, Outlet } from 'react-router-dom';
-import { StyledLinkBtn } from './MovieDetails.styleds';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { StyledLinkBtn, ImgDiv } from './MovieDetails.styleds';
 
 const MovieDetails = () => {
   const details = useFetchMovieDetails();
-
-  console.log(222, details);
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/movies';
 
   return (
     <>
-      <StyledLinkBtn to="/">Go back</StyledLinkBtn>
+      <StyledLinkBtn to={backLinkHref}>Go back</StyledLinkBtn>
 
       {details && (
         <Details>
-          <div>
+          <ImgDiv>
             <img
               src={`https://image.tmdb.org/t/p/w300/${details.poster_path}`}
               alt={details.name}
             />
-          </div>
+          </ImgDiv>
           <div>
             <h2>
               {details.title} ({details.release_date})
             </h2>
-            <p>User score: {Math.ceil(details.popularity * 10)}%</p>
+            <p>User score: {Math.floor(details.popularity * 10)}%</p>
             <h3>Overview</h3>
             <p>{details.overview}</p>
             <h3>Genres</h3>
@@ -32,8 +32,9 @@ const MovieDetails = () => {
           </div>
         </Details>
       )}
-      <p>Additional information</p>
+
       <Additional>
+        <p>Additional information</p>
         <li>
           <NavLink to="cast">Cast</NavLink>
         </li>
