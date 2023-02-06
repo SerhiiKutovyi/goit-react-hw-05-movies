@@ -2,7 +2,7 @@ import { useFetchMovieDetails } from 'hooks/useFetchMovieDetails';
 import { Details, Additional } from './MovieDetails.styleds';
 import { NavLink, Link, Outlet } from 'react-router-dom';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const details = useFetchMovieDetails();
 
   return (
@@ -14,7 +14,7 @@ export const MovieDetails = () => {
           <div>
             <img
               src={`https://image.tmdb.org/t/p/w300/${details.poster_path}`}
-              alt="ert"
+              alt={details.name}
             />
           </div>
           <div>
@@ -42,3 +42,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails;

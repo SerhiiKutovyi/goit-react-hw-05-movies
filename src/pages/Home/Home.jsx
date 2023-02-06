@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { HomeTrend } from './Home.styleds';
 import { fetchTrendingToday } from 'services/moviesApi';
 
-export const Home = () => {
+const Home = () => {
   const [trending, setTrending] = useState([]);
 
   useEffect(() => {
@@ -25,3 +25,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;

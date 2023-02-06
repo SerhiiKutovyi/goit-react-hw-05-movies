@@ -36,13 +36,22 @@ export async function fetchMovieName(moviname) {
 }
 
 export async function fetchMovieCredits(id) {
-  console.log(111, id);
   const response = await axios(`/movie/${id}/credits`, {
     params: {
       api_key: KEY,
     },
   });
-  console.log(111, response.data.cast);
 
-  return response.data;
+  return response.data.cast;
+}
+
+export async function fetchMovieReviews(id) {
+  const response = await axios(`/movie/${id}/reviews`, {
+    params: {
+      api_key: KEY,
+      page: 1,
+    },
+  });
+
+  return response.data.results;
 }

@@ -16,4 +16,5 @@ export const Details = styled.div`
 export const Additional = styled.ul`
   margin-left: 30px;
   margin-bottom: 20px;
+  margin-top: 10px;
 `;
