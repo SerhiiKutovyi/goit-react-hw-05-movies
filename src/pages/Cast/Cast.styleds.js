@@ -14,3 +14,8 @@ export const CastStyleds = styled.div`
     display: inline-block;
   }
 `;
+
+export const CastDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;

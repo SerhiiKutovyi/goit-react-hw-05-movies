@@ -8,6 +8,8 @@ const MovieDetails = () => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/movies';
 
+  console.log(details);
+
   return (
     <>
       <StyledLinkBtn to={backLinkHref}>Go back</StyledLinkBtn>
@@ -24,7 +26,7 @@ const MovieDetails = () => {
             <h2>
               {details.title} ({details.release_date})
             </h2>
-            <p>User score: {Math.floor(details.popularity * 10)}%</p>
+            <p>User score: {Math.floor(details.vote_average * 10)}%</p>
             <h3>Overview</h3>
             <p>{details.overview}</p>
             <h3>Genres</h3>

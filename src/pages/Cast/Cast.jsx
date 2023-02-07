@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { CastStyleds } from './Cast.styleds';
+import { CastStyleds, CastDiv } from './Cast.styleds';
 import { fetchMovieCredits } from 'services/moviesApi';
 import photo from '../../photo/broken_img.png';
 
@@ -14,7 +14,7 @@ const Cast = () => {
   }, [moviesId]);
 
   return (
-    <>
+    <CastDiv>
       {creditsId &&
         creditsId.map(
           ({ id, original_name, profile_path = 'No photo', character }) => (
@@ -32,7 +32,7 @@ const Cast = () => {
             </CastStyleds>
           )
         )}
-    </>
+    </CastDiv>
   );
 };
 export default Cast;
