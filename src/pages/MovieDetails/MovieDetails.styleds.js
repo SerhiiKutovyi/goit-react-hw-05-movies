@@ -20,6 +20,11 @@ export const Details = styled.div`
   h3 {
     margin-bottom: 5px;
   }
+  ul {
+    display: flex;
+    gap: 10px;
+    list-style-type: none;
+  }
 `;
 
 export const Additional = styled.ul`
@@ -54,4 +59,5 @@ export const StyledLinkBtn = styled(NavLink)`
 
 export const ImgDiv = styled.div`
   margin-bottom: 10px;
+  margin-left: 10px;
 `;

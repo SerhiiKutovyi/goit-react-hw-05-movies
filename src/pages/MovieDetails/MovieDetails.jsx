@@ -28,7 +28,11 @@ const MovieDetails = () => {
             <h3>Overview</h3>
             <p>{details.overview}</p>
             <h3>Genres</h3>
-            <p>{details.genres.name}</p>
+            <ul>
+              {details.genres.map(({ name, id }) => (
+                <li key={id}>{name}</li>
+              ))}
+            </ul>
           </div>
         </Details>
       )}
