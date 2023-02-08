@@ -8,8 +8,6 @@ const MovieDetails = () => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/movies';
 
-  console.log(details);
-
   return (
     <>
       <StyledLinkBtn to={backLinkHref}>Go back</StyledLinkBtn>

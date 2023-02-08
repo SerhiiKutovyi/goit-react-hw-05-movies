@@ -15,7 +15,9 @@ const Cast = () => {
 
   return (
     <CastDiv>
-      {creditsId &&
+      {creditsId.length === 0 ? (
+        <p> We don't have reviews for actors' photos. </p>
+      ) : (
         creditsId.map(
           ({ id, original_name, profile_path = 'No photo', character }) => (
             <CastStyleds key={id}>
@@ -31,7 +33,8 @@ const Cast = () => {
               <span>character: {character}</span>
             </CastStyleds>
           )
-        )}
+        )
+      )}
     </CastDiv>
   );
 };

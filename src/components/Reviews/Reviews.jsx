@@ -8,8 +8,7 @@ const Reviews = () => {
   const { moviesId } = useParams();
 
   useEffect(() => {
-    if (moviesId !== '' && moviesId !== null)
-      fetchMovieReviews(moviesId).then(setReviews);
+    if (!moviesId) fetchMovieReviews(moviesId).then(setReviews);
   }, [moviesId]);
 
   return (

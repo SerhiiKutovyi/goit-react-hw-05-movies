@@ -2,6 +2,7 @@ import { useSearchParams, Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { MoviesStyleds } from './Movies.styleds';
 import { fetchMovieName } from 'services/moviesApi';
+import { toast } from 'react-toastify';
 
 const Movies = () => {
   const location = useLocation();
@@ -10,13 +11,16 @@ const Movies = () => {
   const moviname = searchParams.get('movie') ?? '';
 
   useEffect(() => {
-    if (moviname !== '' && moviname !== null)
-      fetchMovieName(moviname).then(setInputValue);
+    if (!moviname) {
+      return;
+    }
+    fetchMovieName(moviname).then(data => setInputValue);
   }, [moviname]);
 
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.target;
+
     setSearchParams(
       form.elements.movie.value !== ''
         ? { movie: form.elements.movie.value }
