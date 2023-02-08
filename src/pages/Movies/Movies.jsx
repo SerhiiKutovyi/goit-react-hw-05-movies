@@ -14,7 +14,13 @@ const Movies = () => {
     if (!moviname) {
       return;
     }
-    fetchMovieName(moviname).then(data => setInputValue);
+    fetchMovieName(moviname).then(data => {
+      if (data.length === 0) {
+        toast.error('Please enter the correct movie title!');
+      } else {
+        setInputValue(data);
+      }
+    });
   }, [moviname]);
 
   const handleSubmit = event => {

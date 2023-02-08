@@ -9,8 +9,7 @@ const Cast = () => {
   const { moviesId } = useParams();
 
   useEffect(() => {
-    if (moviesId !== '' && moviesId !== null)
-      fetchMovieCredits(moviesId).then(setCreditsId);
+    if (moviesId !== '') fetchMovieCredits(moviesId).then(setCreditsId);
   }, [moviesId]);
 
   return (
