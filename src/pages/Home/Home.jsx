@@ -18,7 +18,7 @@ const Home = () => {
         <ul>
           {trending.map(({ original_title = 'Not relevant', id }) => (
             <li key={id}>
-              <Link to={`movies/${id}`} state={{ from: location }}>
+              <Link state={{ from: location }} to={`movies/${id}`}>
                 {original_title}
               </Link>
             </li>

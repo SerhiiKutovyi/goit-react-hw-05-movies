@@ -6,16 +6,12 @@ import { StyledLinkBtn, ImgDiv } from './MovieDetails.styleds';
 const MovieDetails = () => {
   const details = useFetchMovieDetails();
   const location = useLocation();
-  // const backLinkHref = location.state?.from ?? '/';
+
+  const backLinkHref = location.state?.from ?? '/';
 
   return (
     <>
-      <StyledLinkBtn
-        to={location.state.from}
-        state={{ from: location.state.from }}
-      >
-        Go back
-      </StyledLinkBtn>
+      <StyledLinkBtn to={backLinkHref}>Go back</StyledLinkBtn>
 
       {details && (
         <Details>
@@ -45,10 +41,14 @@ const MovieDetails = () => {
       <Additional>
         <p>Additional information</p>
         <li>
-          <NavLink to="cast">Cast</NavLink>
+          <NavLink to="cast" state={{ from: location.state.from }}>
+            Cast
+          </NavLink>
         </li>
         <li>
-          <NavLink to="reviews">Reviews</NavLink>
+          <NavLink to="reviews" state={{ from: location.state.from }}>
+            Reviews
+          </NavLink>
         </li>
       </Additional>
       <Outlet />

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { CastStyleds, CastDiv } from './Cast.styleds';
 import { fetchMovieCredits } from 'services/moviesApi';
 import photo from '../../photo/broken_img.png';
@@ -7,7 +7,6 @@ import photo from '../../photo/broken_img.png';
 const Cast = () => {
   const [creditsId, setCreditsId] = useState([]);
   const { moviesId } = useParams();
-  const location = useLocation;
 
   useEffect(() => {
     if (moviesId !== '') fetchMovieCredits(moviesId).then(setCreditsId);
@@ -15,7 +14,6 @@ const Cast = () => {
 
   return (
     <CastDiv>
-      <Link to={location.state.from}></Link>
       {creditsId.length === 0 ? (
         <p> We don't have reviews for actors' photos. </p>
       ) : (

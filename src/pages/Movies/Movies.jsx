@@ -5,9 +5,9 @@ import { fetchMovieName } from 'services/moviesApi';
 import { toast } from 'react-toastify';
 
 const Movies = () => {
-  const location = useLocation();
   const [inputValue, setInputValue] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
   const moviname = searchParams.get('movie') ?? '';
 
   useEffect(() => {
