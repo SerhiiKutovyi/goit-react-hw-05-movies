@@ -6,11 +6,14 @@ import { StyledLinkBtn, ImgDiv } from './MovieDetails.styleds';
 const MovieDetails = () => {
   const details = useFetchMovieDetails();
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
+  // const backLinkHref = location.state?.from ?? '/';
 
   return (
     <>
-      <StyledLinkBtn to={backLinkHref} state={{ from: location.state.from }}>
+      <StyledLinkBtn
+        to={location.state.from}
+        state={{ from: location.state.from }}
+      >
         Go back
       </StyledLinkBtn>
 
